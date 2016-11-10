@@ -1,12 +1,15 @@
 
-var posts = [{text: ' ', id: 0}];
+var posts = [];
 
+var pushPostsToDiv = function()  {
+for (i = 0; i < (posts.length); i++) { 
+$(".posts").find("span").append("<br><p class='post rainbow' data-id=" + i + ">" + posts[i].text + "<button class='btn btn-primary remove'>Remove</button></p>");}
+$(".remove").on("click", function(){
+    console.log("You pressed the remove button")
+    $(this).closest("p").remove();
+});
 
-	var pushPostsToDiv = function()  {
-	for (i = 0; i < posts.length; i++) { 
-    $(".posts").find("span").append("<br><p class='post rainbow' data-id=" + i + ">" + posts[i].text + "</p>");}
-		};
-	// $(".posts").text("<br><p class='post' data-id=" + i + ">" + posts[i].text + "</p>");
+	};
 
 
 $('.submitButton').click(function(event) {
@@ -29,3 +32,21 @@ $(".revealPosts").click(function(event) {
 	pushPostsToDiv();
 
 });
+
+
+
+ // EXTRAS
+
+ // $(".posts").text("<br><p class='post' data-id=" + i + ">" + posts[i].text + "</p>");
+
+// $(".remove").click(function(event) {
+// 	event.preventDefault();
+
+// 	console.log("You pressed the remove button")	
+
+// 	$(this).closest("p").remove();
+
+// 	 // $("span").hide();
+// });
+
+// var posts = [{text: ' ', id: 0}];

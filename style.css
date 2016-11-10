@@ -10,3 +10,12 @@
 .star {
 	content:"\f006";
 }
+
+.postsBox {
+	/*text-align: center;*/
+	/*left: 20px;*/
+}
+
+span {
+	text-indent: 50px;
+}
